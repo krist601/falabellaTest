@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.core.coroutines.Completable
 import com.example.core.coroutines.Result
 
+
 typealias LiveResult<T> = MutableLiveData<Result<T>>
 typealias LiveCompletable = MutableLiveData<Completable>
 

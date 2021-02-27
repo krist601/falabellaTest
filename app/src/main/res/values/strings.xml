@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Falabella Recruitment Test</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -18,5 +18,9 @@
     <string name="activity_economic_indicator_detail_value">Valor: %s</string>
     <string name="activity_economic_indicator_detail_title">Indicador económico</string>
     <string name="activity_economic_indicators_title">Bienvenido %s</string>
+    <string name="activity_login_title">Login</string>
     <string name="image">image</string>
+    <string name="activity_login_error_title">Error!</string>
+    <string name="activity_login_error_body">Combinación de usuario contraseña incorrecta, revise y vuelva a intentarlo</string>
+    <string name="activity_login_error_button">ok</string>
 </resources>

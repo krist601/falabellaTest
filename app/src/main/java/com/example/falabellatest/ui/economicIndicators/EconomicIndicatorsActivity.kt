@@ -34,10 +34,10 @@ class EconomicIndicatorsActivity : BaseActivity(), EconomicIndicatorsAdapter.OnC
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.listView.layoutManager = (LinearLayoutManager(this, RecyclerView.VERTICAL, false))
-        viewModel.getData()
         with(viewModel) { observe(dataLiveData, ::dataObserver) }
+        viewModel.getData()
 
-        binding.titleTextView.text = getString(R.string.activity_economic_indicators_title, "Kristian")
+        binding.titleTextView.text = getString(R.string.activity_economic_indicators_title, userLogged?.username)
         binding.logoutButton.setOnClickListener { userLogged = null; finish() }
     }
 
