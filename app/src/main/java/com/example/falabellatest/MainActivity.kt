@@ -1,7 +1,10 @@
 package com.example.falabellatest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.falabellatest.ui.economicIndicators.EconomicIndicatorsActivity
+import com.example.falabellatest.ui.login.LoginActivity
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -13,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initKoin()
+        startApp()
+    }
+    private fun startApp() {
+        startActivity(Intent().setClass(this, EconomicIndicatorsActivity::class.java))
     }
 
     //******************* DI *******************//

@@ -1,6 +1,8 @@
 package com.example.falabellatest.data.entities
 
 import com.example.falabellatest.domain.entities.HeaderMemory
+import com.google.gson.Gson
+import java.lang.reflect.Type
 
 data class HeaderEntry (
     var version: String?,
@@ -37,4 +39,13 @@ data class HeaderEntry (
                                     bitcoin?.toEntityMemory()
         )
     )
+    fun serialize(): String? {
+        val data = Gson()
+        return data.toJson(this)
+    }
+    companion object {
+        fun create(serializedData: String?, dataClass: Type): HeaderEntry {
+            return Gson().fromJson(serializedData, dataClass)
+        }
+    }
 }
