@@ -3,6 +3,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Usuario</string>
     <string name="prompt_password">Contraseña</string>
+    <string name="prompt_search">Busqueda</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>

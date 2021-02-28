@@ -2,6 +2,8 @@ package com.example.falabellatest.ui.economicIndicators
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core.coroutines.Result
@@ -26,6 +28,7 @@ class EconomicIndicatorsActivity : BaseActivity(), EconomicIndicatorsAdapter.OnC
 
     //******************* VIEW LIFECYCLE *******************//
 
+    @ExperimentalStdlibApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEconomicIndicatorsBinding.inflate(layoutInflater)
@@ -39,6 +42,14 @@ class EconomicIndicatorsActivity : BaseActivity(), EconomicIndicatorsAdapter.OnC
 
         binding.titleTextView.text = getString(R.string.activity_economic_indicators_title, userLogged?.username)
         binding.logoutButton.setOnClickListener { userLogged = null; finish() }
+
+        binding.searchTextView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                viewModel.filterData(binding.searchTextView.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {/*empty*/}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {/*empty*/}
+        })
     }
 
     override fun click(item: EconomicIndicatorMemory) {
