@@ -8,7 +8,7 @@ class LoginMemory (
     var password: String?
 ){
     fun toEntityEntry() = LoginEntry(
-        username = username,
-        password = password//encrypt(password)
+        password = encrypt(password ?: ""),
+        username = username
     )
 }

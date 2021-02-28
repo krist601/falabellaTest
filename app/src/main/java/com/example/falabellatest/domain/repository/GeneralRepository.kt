@@ -9,9 +9,7 @@ class GeneralRepository(
     private val generalDataSource: GeneralLocalDataSource
 ) {
     fun getLogin(username: String, password: String): Pair<Int, LoginMemory?> {
-        return generalDataSource.getLogin(username, password)?.let { Pair(RESPONSE_SUCCESS_CODE, it.toEntityMemory()) }
-            ?:
-            Pair(RESPONSE_UNAUTHORIZED_CODE, null)
+        return generalDataSource.getLogin(username, password)?.let { Pair(RESPONSE_SUCCESS_CODE, it.toEntityMemory()) } ?: Pair(RESPONSE_UNAUTHORIZED_CODE, null)
     }
     fun setLogin(username: String, password: String) {
         generalDataSource.setLogin(username, LoginMemory(username = username, password = password).toEntityEntry())
